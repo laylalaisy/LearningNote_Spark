@@ -33,22 +33,14 @@ if __name__ == "__main__":
     # create SparkContext as sc
     sc = spark.sparkContext
 
-    #   sys.argv[0] is the name of the script.
-    #   sys.argv[1] is the first parameter
-    inputPath = sys.argv[1] # input file
+    nums = sc.parallelize([1, 2, 3, 4, 5])
+    print(nums.collect())
 
-    # create RDD from a text file
-    textfileRDD = sc.textFile(inputPath)
-    print(textfileRDD.collect())
+    bytwo = nums.map(lambda x: x+2)
+    print(bytwo.collect())
 
-    wordsRDD = textfileRDD.flatMap(lambda line: line.split(" "))
-    print(wordsRDD.collect())
-
-    pairsRDD =  wordsRDD.map(lambda word: (word, 1))
-    print(pairsRDD.collect())
-
-    frequenciesRDD = pairsRDD.reduceByKey(lambda a, b: a + b)
-    print(frequenciesRDD.collect())
+    squared = nums.map(lambda x: x*x)
+    print(squared.collect())
 
     # done!
     spark.stop()
