@@ -23,14 +23,14 @@ if __name__ == "__main__":
     # create SparkContext as sc
     sc = spark.sparkContext
 
-    nums = sc.parallelize([1, 2, 3, 4, 5])
-    print(nums.collect())
+    nums = sc.parallelize([1, 2, 3, 4, 5, 6, 7])
+    nums.collect()
 
-    bytwo = nums.map(lambda x: x+2)
-    print(bytwo.collect())
+    filtered1 = nums.filter(lambda x: x%2 == 1)
+    print(filtered1.collect())
 
-    squared = nums.map(lambda x: x*x)
-    print(squared.collect())
+    filtered2 = nums.filter(lambda x: x%2 == 0)
+    print(filtered2.collect())
 
     # done!
     spark.stop()

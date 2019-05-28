@@ -43,7 +43,9 @@ if __name__ == "__main__":
     print(sumCount)
 
     # multiple value
-    averageByKey = sumCount.map(lambda key_vals: (key_vals[0], key_vals[1][0] / key_vals[1][1]))
+    # averageByKey = sumCount.map(lambda key_vals: (key_vals[0], key_vals[1][0] / key_vals[1][1]))
+    # OR
+    averageByKey = sumCount.mapValues(lambda v: v[0]/v[1])
     average = averageByKey.collectAsMap()
     print(average)
 
