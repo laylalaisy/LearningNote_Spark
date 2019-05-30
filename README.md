@@ -15,3 +15,8 @@ Introduction: https://github.com/mahmoudparsian/pyspark-tutorial/blob/master/tut
 - Multiply: how to multiply all RDD elements together
 - Sort: Find average by using combineByKey()
 - Filter: how to filter RDD elements
+- Average: how to find average
+- Cartesian Product: rdd1.cartesian(rdd2)
+- Sort By Key: sort by key ascending/ descending
+- Add Indices: how to add indices
+- Map Partitions: mapPartitions() by examples
