@@ -1,4 +1,4 @@
-# Spark Tutorial
+# LearningNote Spark
 
 Learning Apache Spark and Streaming Analysis recently.
 
